@@ -36,5 +36,5 @@ libraryDependencies ++= Seq(
     "org.scala-lang.modules" %% "scala-async" % "0.9.2"    
  )
  
- libraryDependencies += "io.lamma" % "lamma_2.11" % "2.2.2"
+ libraryDependencies += "io.lamma" % "lamma_2.11" % "2.2.2" withSources()
  

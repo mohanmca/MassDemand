@@ -11,9 +11,13 @@ object dateWorksheet {
   //val julyDates = Date(2015, 7, 7).daysOfMonth.toList
 
   firstJan2015.dayOfWeek;System.out.println("""res0: io.lamma.DayOfWeek = """ + $show(res$0));$skip(126); 
-  val today = Date(now.get(java.util.Calendar.YEAR), now.get(java.util.Calendar.MONTH) + 1, now.get(java.util.Calendar.DATE));System.out.println("""today  : io.lamma.Date = """ + $show(today ));$skip(54); 
-  val nextFriday = today.nextOrSame(DayOfWeek.FRIDAY);System.out.println("""nextFriday  : io.lamma.Date = """ + $show(nextFriday ));$skip(58); 
-  val priorFriday = nextFriday.previous(DayOfWeek.FRIDAY);System.out.println("""priorFriday  : io.lamma.Date = """ + $show(priorFriday ));$skip(31); 
- 	val range = (1 to 356 by 7 );System.out.println("""range  : scala.collection.immutable.Range = """ + $show(range ));$skip(59); 
- 	val futureFridays = range.map { x => priorFriday + x   };System.out.println("""futureFridays  : scala.collection.immutable.IndexedSeq[io.lamma.Date] = """ + $show(futureFridays ))}
+  val today = Date(now.get(java.util.Calendar.YEAR), now.get(java.util.Calendar.MONTH) + 1, now.get(java.util.Calendar.DATE));System.out.println("""today  : io.lamma.Date = """ + $show(today ));$skip(229); 
+  def recurringDays(dayOfWeek: io.lamma.DayOfWeek): List[Date] = {
+    val priorDay = today.previous(dayOfWeek)
+    val range = (1 to 356 by 7)
+    val futureDays = range.map { x => priorDay + (x - 1) }
+    futureDays.toList
+  };System.out.println("""recurringDays: (dayOfWeek: io.lamma.DayOfWeek)List[io.lamma.Date]""");$skip(36); val res$1 = 
+
+  recurringDays(DayOfWeek.FRIDAY);System.out.println("""res1: List[io.lamma.Date] = """ + $show(res$1))}
 }

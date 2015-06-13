@@ -11,7 +11,12 @@ object dateWorksheet {
   //val julyDates = Date(2015, 7, 7).daysOfMonth.toList
 
   firstJan2015.dayOfWeek;System.out.println("""res0: io.lamma.DayOfWeek = """ + $show(res$0));$skip(126); 
-  val today = Date(now.get(java.util.Calendar.YEAR), now.get(java.util.Calendar.MONTH) + 1, now.get(java.util.Calendar.DATE));System.out.println("""today  : io.lamma.Date = """ + $show(today ));$skip(30); val res$1 = 
+  val today = Date(now.get(java.util.Calendar.YEAR), now.get(java.util.Calendar.MONTH) + 1, now.get(java.util.Calendar.DATE));System.out.println("""today  : io.lamma.Date = """ + $show(today ));$skip(63); 
 
-  RecurringDays.monthly(15);System.out.println("""res1: List[io.lamma.Date] = """ + $show(res$1))}
+  val weekly = RecurringDays.recurringDays(Saturday).take(4);System.out.println("""weekly  : List[io.lamma.Date] = """ + $show(weekly ));$skip(50); 
+  val monthly = RecurringDays.monthly(20).take(2);System.out.println("""monthly  : List[io.lamma.Date] = """ + $show(monthly ));$skip(46); 
+  val jackDemand = weekly.map { x => (x, 2) };System.out.println("""jackDemand  : List[(io.lamma.Date, Int)] = """ + $show(jackDemand ));$skip(48); 
+  val jillDemand = monthly.map { x => (x, 10) };System.out.println("""jillDemand  : List[(io.lamma.Date, Int)] = """ + $show(jillDemand ));$skip(59); 
+  val allUserDemand = List(jackDemand, jillDemand).flatten;System.out.println("""allUserDemand  : List[(io.lamma.Date, Int)] = """ + $show(allUserDemand ));$skip(68); val res$1 = 
+  allUserDemand.filter{case (dt, demand) => dt == Date(2015,6,20) };System.out.println("""res1: List[(io.lamma.Date, Int)] = """ + $show(res$1))}
 }

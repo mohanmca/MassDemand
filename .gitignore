@@ -1,0 +1,7 @@
+/bin/
+/target/
+/.settings/
+/.worksheet/
+/project/
+.cache-main
+.cache-test

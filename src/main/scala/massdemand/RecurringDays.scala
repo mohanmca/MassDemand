@@ -1,3 +1,5 @@
+package massdemand
+
 import io.lamma._
 
 /**
@@ -6,8 +8,8 @@ import io.lamma._
 object RecurringDays {
   def recurringDays(dayOfWeek: io.lamma.DayOfWeek): List[Date] = {
     val priorDay = today.previous(dayOfWeek)
-    val range = (1 to 356 by 7)
-    val futureDays = range.map { x => priorDay + (x - 1) }
+    val range = (1 to 52)
+    val futureDays = range.map { x => priorDay + (x*7 - 1) }
     futureDays.toList
   } 
 

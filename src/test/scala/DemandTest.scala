@@ -14,6 +14,6 @@ import io.lamma.DayOfWeek
 class DemandTest extends FlatSpec with Matchers {
 
   "MultiUserDemand" should "User Weekly, and Montly Recurring should add up " in {
-    RecurringDays.recurringDays(DayOfWeek.SATURDAY).take(2)
+    RecurringDays.recurring(DayOfWeek.SATURDAY).take(2)
   }
 } 

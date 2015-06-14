@@ -7,7 +7,7 @@ import io.lamma.DayOfMonth.NthDayOfMonth
  * @author Mohan
  */
 object RecurringDays {
-  def recurringDays(dayOfWeek: io.lamma.DayOfWeek): List[Date] = {
+  def recurring(dayOfWeek: io.lamma.DayOfWeek): List[Date] = {
     val priorDay = today.previous(dayOfWeek)
     val range = (1 to 52)
     val futureDays = range.map { x => priorDay + (x * 7) }
